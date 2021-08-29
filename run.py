@@ -17,6 +17,19 @@ current_player = "X"
 # ------- Functions -------
 
 
+# 4.5 Check if there is a tie
+def check_for_tie():
+    # Set global variables
+    global ongoing_game
+    # If board is full
+    if "*" not in board:
+        ongoing_game = False
+        return True
+    # Else there is no tie
+    else:
+        return False
+
+
 # 4.4 Check the diagonals for a win
 def check_diagonals():
     # Set global variables
@@ -29,7 +42,7 @@ def check_diagonals():
         ongoing_game = False
     # Return the winner
     if diagonal_1:
-        return board[0] 
+        return board[0]
     elif diagonal_2:
         return board[2]
     # Or return None if there was no winner
