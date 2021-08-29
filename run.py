@@ -17,6 +17,30 @@ current_player = "X"
 # ------- Functions -------
 
 
+# 4.5 Check for winner
+def check_for_winner():
+    # Set global variables
+    global winner
+    # Check rows, columns and diagonals for a winning line
+    row_winner = check_rows()
+    column_winner = check_columns()
+    diagonal_winner = check_diagonals()
+    if row_winner:
+        winner = row_winner
+    elif column_winner:
+        winner = column_winner
+    elif diagonal_winner:
+        winner = diagonal_winner
+    else:
+        winner = None
+
+
+# 04 Check for game end
+def check_if_game_over():
+    check_for_winner()
+    check_for_tie()
+
+
 # 03 Handle a turn
 def handle_turn(player):
     # Get position from player
