@@ -17,7 +17,30 @@ current_player = "X"
 # ------- Functions -------
 
 
-# 05 Check the rows for a win
+# 4.3 Check the columns for a win
+def check_columns():
+    # Set global variables
+    global ongoing_game
+    # Check if any of the columns have all the same value (and is not empty)
+    column_1 = board[0] == board[3] == board[6] != "*"
+    column_2 = board[1] == board[4] == board[7] != "*"
+    column_3 = board[2] == board[5] == board[8] != "*"
+    # If any columns have a match, flag that there is a win
+    if column_1 or column_2 or column_3:
+        ongoing_game = False
+    # Return the winner
+    if column_1:
+        return board[0]
+    elif column_2:
+        return board[1]
+    elif column_3:
+        return board[2]
+    # Or return None if there was no winner
+    else:
+        return None
+
+
+# 4.2 Check the rows for a win
 def check_rows():
     # Set global variables
     global ongoing_game
@@ -25,7 +48,7 @@ def check_rows():
     row_1 = board[0] == board[1] == board[2] != "*"
     row_2 = board[3] == board[4] == board[5] != "*"
     row_3 = board[6] == board[7] == board[8] != "*"
-    # If any row does have a match, flag that there is a win
+    # If any rows have a match, flag that there is a win
     if row_1 or row_2 or row_3:
         ongoing_game = False
     # Return the winner
@@ -40,7 +63,7 @@ def check_rows():
         return None
 
 
-# 4.5 Check for winner
+# 4.1 Check for winner
 def check_for_winner():
     # Set global variables
     global winner
