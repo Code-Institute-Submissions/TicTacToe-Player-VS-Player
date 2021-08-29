@@ -17,9 +17,21 @@ current_player = "X"
 # ------- Functions -------
 
 
+# 05 Swap the current player from X to O, or O to X
+def swap_player():
+    # Global variable we need
+    global current_player
+    # If the current player was X, make it O
+    if current_player == "X":
+        current_player = "O"
+    # Or if the current player was O, make it X
+    elif current_player == "O":
+        current_player = "X"
+
+
 # 4.5 Check if there is a tie
 def check_for_tie():
-    # Set global variables
+    # Set global variable
     global ongoing_game
     # If board is full
     if "*" not in board:
@@ -32,7 +44,7 @@ def check_for_tie():
 
 # 4.4 Check the diagonals for a win
 def check_diagonals():
-    # Set global variables
+    # Set global variable
     global ongoing_game
     # Check if any of the columns have all the same value (and is not empty)
     diagonal_1 = board[0] == board[4] == board[8] != "*"
@@ -52,7 +64,7 @@ def check_diagonals():
 
 # 4.3 Check the columns for a win
 def check_columns():
-    # Set global variables
+    # Set global variable
     global ongoing_game
     # Check if any of the columns have all the same value (and is not empty)
     column_1 = board[0] == board[3] == board[6] != "*"
@@ -75,7 +87,7 @@ def check_columns():
 
 # 4.2 Check the rows for a win
 def check_rows():
-    # Set global variables
+    # Set global variable
     global ongoing_game
     # Check if any of the rows have all the same value (and is not empty)
     row_1 = board[0] == board[1] == board[2] != "*"
@@ -98,7 +110,7 @@ def check_rows():
 
 # 4.1 Check for winner
 def check_for_winner():
-    # Set global variables
+    # Set global variable
     global winner
     # Check rows, columns and diagonals for a winning line
     row_winner = check_rows()
@@ -130,13 +142,13 @@ def handle_turn(player):
     while not valid:
         while position not in ["1", "2", "3", "4", "5", "6", "7", "8", "9"]:
             position = input("Choose a position from 1-9: ")
-    # Get correct index in our board list
-    position = int(position) - 1
-    # Check position is available
-    if board[position] == "*":
-        valid = True
-    else:
-        print("Position taken, please try again")
+        # Get correct index in our board list
+        position = int(position) - 1
+        # Check position is available
+        if board[position] == "*":
+            valid = True
+        else:
+            print("Position taken, please try again")
     # Mark the board
     board[position] = player
     # Display game board
