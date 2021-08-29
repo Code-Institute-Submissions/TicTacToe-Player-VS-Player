@@ -17,6 +17,29 @@ current_player = "X"
 # ------- Functions -------
 
 
+# 03 Handle a turn
+def handle_turn(player):
+    # Get position from player
+    print(player + "'s turn.")
+    position = input("Choose a position from 1-9: ")
+    # Check input is valid
+    valid = False
+    while not valid:
+        while position not in ["1", "2", "3", "4", "5", "6", "7", "8", "9"]:
+            position = input("Choose a position from 1-9: ")
+    # Get correct index in our board list
+    position = int(position) - 1
+    # Check position is available
+    if board[position] == "*":
+        valid = True
+    else:
+        print("Position taken, please try again")
+    # Mark the board
+    board[position] = player
+    # Display game board
+    display_board()
+
+
 # 02 Display the game board to the screen
 def display_board():
     print("\n")
