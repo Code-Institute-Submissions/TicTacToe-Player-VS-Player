@@ -17,6 +17,26 @@ current_player = "X"
 # ------- Functions -------
 
 
+# 4.4 Check the diagonals for a win
+def check_diagonals():
+    # Set global variables
+    global ongoing_game
+    # Check if any of the columns have all the same value (and is not empty)
+    diagonal_1 = board[0] == board[4] == board[8] != "*"
+    diagonal_2 = board[2] == board[4] == board[6] != "*"
+    # If any diagonal row has a match, flag that there is a win
+    if diagonal_1 or diagonal_2:
+        ongoing_game = False
+    # Return the winner
+    if diagonal_1:
+        return board[0] 
+    elif diagonal_2:
+        return board[2]
+    # Or return None if there was no winner
+    else:
+        return None
+
+
 # 4.3 Check the columns for a win
 def check_columns():
     # Set global variables
