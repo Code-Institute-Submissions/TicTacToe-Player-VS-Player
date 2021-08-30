@@ -158,9 +158,11 @@ def handle_turn(player):
 # 02 Display the game board to the screen
 def display_board():
     print("\n")
-    print(board[0] + " | " + board[1] + " | " + board[2] + "     1 | 2 | 3")
-    print(board[3] + " | " + board[4] + " | " + board[5] + "     4 | 5 | 6")
-    print(board[6] + " | " + board[7] + " | " + board[8] + "     7 | 8 | 9")
+    print("-------------------------------------")
+    print("|  " + board[0] + " | " + board[1] + " | " + board[2] + "             1 | 2 | 3  |")
+    print("|  " + board[3] + " | " + board[4] + " | " + board[5] + "  TicTacToe  4 | 5 | 6  |")
+    print("|  " + board[6] + " | " + board[7] + " | " + board[8] + "             7 | 8 | 9  |")
+    print("-------------------------------------")
     print("\n")
 
 
@@ -177,13 +179,28 @@ def play_game():
         # Swap to the other player
         swap_player()
         # Since the game is over, print the winner or tie
+        global board
         if winner == "X" or winner == "O":
             print("Congratulations " + winner + ", you win.")
-        elif winner == None:
-            print("The game is a tie.")
+        # elif board != "*":
+            # print("The game is a tie.")
+
+
+def start():
+    display_board()
+    print("\n")
+    start = input("Would you like to play a game? Y/N: ").upper()
+    if start.upper() == "Y":
+        play_game()
+    elif start.upper() == "N":
+        exit
+    else:
+        print("Invalid character, Please run again")       
 
 
 # ------- Execute -------
 
 # Start a game of tic tac toe
-play_game()
+print("\n")
+print("Welcome to Clayton's TicTacToe Multiplayer Game")
+start()
