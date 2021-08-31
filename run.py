@@ -36,6 +36,7 @@ def check_for_tie():
     # If board is full
     if "*" not in board:
         ongoing_game = False
+        print("Game is a Tie! \n")
         return True
     # Else there is no tie
     else:
@@ -181,9 +182,7 @@ def play_game():
         # Since the game is over, print the winner or tie
         global board
         if winner == "X" or winner == "O":
-            print("Congratulations " + winner + ", you win.")
-        # elif board != "*":
-            # print("The game is a tie.")
+            print("<-------- Congratulations " + winner + ", you win. -------->")
 
 
 def start():
