@@ -17,6 +17,10 @@ current_player = "X"
 # ------- Functions -------
 
 
+def invalid_input():
+    start()
+
+
 # 06 Play again when game ends
 def play_again():
     print("\n")
@@ -44,6 +48,7 @@ def play_again():
     else:
         # Error if invalid character was input
         print("Invalid character, Please run again")
+        invalid_input()
 
 
 # 05 Swap the current player from X to O, or O to X
@@ -62,9 +67,10 @@ def swap_player():
 def check_for_tie():
     # Set global variable
     global ongoing_game
-    # If board is full
+    # If board is full stop game
     if "*" not in board:
         ongoing_game = False
+        # And print game is a tie
         print("Game is a Tie! \n")
         return True
     # Else there is no tie
@@ -158,7 +164,9 @@ def check_for_winner():
 
 # 04 Check for game end
 def check_if_game_over():
+    # Check for winner
     check_for_winner()
+    # Check for tie
     check_for_tie()
 
 
@@ -189,9 +197,12 @@ def handle_turn(player):
 def display_board():
     print("\n")
     print("-------------------------------------")
-    print("|  " + board[0] + " | " + board[1] + " | " + board[2] + "             1 | 2 | 3  |")
-    print("|  " + board[3] + " | " + board[4] + " | " + board[5] + "  TicTacToe  4 | 5 | 6  |")
-    print("|  " + board[6] + " | " + board[7] + " | " + board[8] + "             7 | 8 | 9  |")
+    print("|  " + board[0] + " | " + board[1]
+          + " | " + board[2] + "             1 | 2 | 3  |")
+    print("|  " + board[3] + " | " + board[4]
+          + " | " + board[5] + "  TicTacToe  4 | 5 | 6  |")
+    print("|  " + board[6] + " | " + board[7]
+          + " | " + board[8] + "             7 | 8 | 9  |")
     print("-------------------------------------")
     print("\n")
 
@@ -211,20 +222,26 @@ def play_game():
         # Since the game is over, print the winner or tie
         global board
         if winner == "X" or winner == "O":
-            print("<-------- Congratulations " + winner + ", you win. -------->")
+            print("<-------- Congratulations "
+                  + winner + ", you win. -------->")
             play_again()
 
 
+# Prompt user to start game
 def start():
     display_board()
     print("\n")
     start = input("Would you like to play a game? Y/N: ").upper()
+    # If yes play game
     if start.upper() == "Y":
         play_game()
+    # if no exit
     elif start.upper() == "N":
         exit
+    # if invalid input print
     else:
         print("Invalid character, Please run again")
+        invalid_input()
 
 
 # ------- Execute -------
