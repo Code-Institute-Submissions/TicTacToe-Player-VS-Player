@@ -17,6 +17,35 @@ current_player = "X"
 # ------- Functions -------
 
 
+# 06 Play again when game ends
+def play_again():
+    print("\n")
+    # Ask user for another game
+    start = input("Would you like to play another game? Y/N: ").upper()
+    # If yes resest the game
+    if start.upper() == "Y":
+        # Reset board
+        global board
+        board = ["*", "*", "*", "*", "*", "*", "*", "*", "*"]
+        # Reset ongoing_game
+        global ongoing_game
+        ongoing_game = True
+        # Reset current player back to X
+        global current_player
+        current_player = "X"
+        # Reset winner to none
+        global winner
+        winner = None
+        # Run Game
+        play_game()
+        # Exit if N was typed
+    elif start.upper() == "N":
+        exit
+    else:
+        # Error if invalid character was input
+        print("Invalid character, Please run again")
+
+
 # 05 Swap the current player from X to O, or O to X
 def swap_player():
     # Global variable we need
@@ -183,6 +212,7 @@ def play_game():
         global board
         if winner == "X" or winner == "O":
             print("<-------- Congratulations " + winner + ", you win. -------->")
+            play_again()
 
 
 def start():
@@ -194,7 +224,7 @@ def start():
     elif start.upper() == "N":
         exit
     else:
-        print("Invalid character, Please run again")       
+        print("Invalid character, Please run again")
 
 
 # ------- Execute -------
