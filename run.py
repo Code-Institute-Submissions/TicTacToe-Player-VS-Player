@@ -197,12 +197,12 @@ def handle_turn(player):
 def display_board():
     print("\n")
     print("-------------------------------------")
-    print("|  " + board[0] + " | " + board[1]
-          + " | " + board[2] + "             1 | 2 | 3  |")
-    print("|  " + board[3] + " | " + board[4]
-          + " | " + board[5] + "  TicTacToe  4 | 5 | 6  |")
-    print("|  " + board[6] + " | " + board[7]
-          + " | " + board[8] + "             7 | 8 | 9  |")
+    print("|  " + board[0] + " | " + board[1] +
+          " | " + board[2] + "             1 | 2 | 3  |")
+    print("|  " + board[3] + " | " + board[4] +
+          " | " + board[5] + "  TicTacToe  4 | 5 | 6  |")
+    print("|  " + board[6] + " | " + board[7] +
+          " | " + board[8] + "             7 | 8 | 9  |")
     print("-------------------------------------")
     print("\n")
 
@@ -222,8 +222,8 @@ def play_game():
         # Since the game is over, print the winner or tie
         global board
         if winner == "X" or winner == "O":
-            print("<-------- Congratulations "
-                  + winner + ", you win. -------->")
+            print("<-------- Congratulations " +
+                  winner + ", you win. -------->")
             play_again()
 
 
