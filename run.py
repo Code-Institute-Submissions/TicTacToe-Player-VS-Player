@@ -17,6 +17,7 @@ current_player = "X"
 # ------- Functions -------
 
 
+# 06 If invalid input othr than Y/N prompts again
 def invalid_input():
     start()
 
@@ -72,6 +73,7 @@ def check_for_tie():
         ongoing_game = False
         # And print game is a tie
         print("Game is a Tie! \n")
+        play_again()
         return True
     # Else there is no tie
     else:
