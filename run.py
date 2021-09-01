@@ -17,7 +17,7 @@ current_player = "X"
 # ------- Functions -------
 
 
-# 06 If invalid input othr than Y/N prompts again
+# 07 If invalid input othr than Y/N prompts again
 def invalid_input():
     start()
 
