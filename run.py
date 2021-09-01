@@ -45,6 +45,11 @@ def play_again():
         play_game()
         # Exit if N was typed
     elif start.upper() == "N":
+        print("\n")
+        print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+        print("Find me on GitHub, TechCentreUK")
+        print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+        print("\n")
         exit
     else:
         # Error if invalid character was input
@@ -239,6 +244,11 @@ def start():
         play_game()
     # if no exit
     elif start.upper() == "N":
+        print("\n")
+        print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+        print("Find me on GitHub, TechCentreUK")
+        print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+        print("\n")
         exit
     # if invalid input print
     else:
