@@ -28,6 +28,8 @@ A Multiplayer CLI or Command Line Interface Python Game of Tic Tac Toe.
 
 ### Audience
 
+- The application has no strict audience, it is aimed at anyone that want's to play.
+
 ## Technologies
 
 ### Languages
@@ -40,9 +42,9 @@ A Multiplayer CLI or Command Line Interface Python Game of Tic Tac Toe.
 - [Heroku](https://heroku.com)
 
 ## Bugs & Fixes
+I had alot of bugs throughout this entire build, trying to figure out and work through all the various loops and end points has been a tedious task.
 
 ## Testing
-
 ![Testing Sheet]()
 
 ## Deployment
@@ -73,9 +75,28 @@ Forking a repository allows you to experiment without the original project being
 2. In the top right of the page, below your profile you should see a "Fork" button. Simply click on this.
 3. A copy of the forked repository will then be added to your own Repositories Page.
 
+### Clone
+
+1. Navigate to the Github Repository you want to clone.
+
+2. Click the drop down menu labelled "Clone".
+
+3. Either Download the ZIP file, unpackage locally and open with IDE (This route ends here) OR Copy Git URL from the HTTPS dialogue box.
+
+4. Open your developement editor and open a terminal window in a directory of your choice.
+
+5. Use the 'git clone' command in terminal followed by the copied git URL.
+
+6. A clone of the project will be created locally on your local machine.
+
 ## Credits
 
+![Programiz](https://www.programiz.com/python-programming/user-defined-exception)
+![Docs](https://docs.python.org/3/tutorial/errors.html#exceptions)
+- For teaching me how to create my own exceptions.
 
+![ezgif](https://ezgif.com/video-to-gif/ezgif-7-8f72051b1f54.mp4)
+- For creating my readme gif.
 
 ### Acknowledgment
 I'd like to thank my mentor [Daisy McGirr](https://github.com/Daisy-McG) for her guidance and support throughout my project.
