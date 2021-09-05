@@ -112,7 +112,8 @@ def check_for_tie():
     # Set global variable
     global ongoing_game
     # If board is full stop game
-    if "*" not in board:
+    check_for_winner()
+    if "*" not in board and winner is None:
         ongoing_game = False
         # And print game is a tie
         print("Game is a Tie! \n")
