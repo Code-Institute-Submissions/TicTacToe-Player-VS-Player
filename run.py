@@ -19,7 +19,24 @@ current_player = "X"
 
 # 07 If invalid input othr than Y/N prompts again
 def invalid_input():
-    start()
+    print("\n")
+    start = input("Would you like to play a game? Y/N: ").upper()
+    # If yes play game
+    if start.upper() == "Y":
+        play_game()
+    # if no exit
+    elif start.upper() == "N":
+        print("\n")
+        print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+        print("Find me on GitHub, TechCentreUK")
+        print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+        print("\n")
+        exit
+    # if invalid input print
+    else:
+        print("\n")
+        print("Invalid character, Please run again")
+        invalid_input()
 
 
 # 06 Play again when game ends
@@ -252,6 +269,7 @@ def start():
         exit
     # if invalid input print
     else:
+        print("\n")
         print("Invalid character, Please run again")
         invalid_input()
 
