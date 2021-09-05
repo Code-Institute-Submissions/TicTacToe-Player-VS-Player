@@ -14,6 +14,18 @@ winner = None
 # Current Player (X starts first)
 current_player = "X"
 
+# ------- Classes -------
+
+
+class Error(Exception):
+    """Base class for other exceptions"""
+    pass
+
+
+class SpaceTakenError(Error):
+    """Raised when the input space is already taken"""
+    pass
+
 # ------- Functions -------
 
 
@@ -207,37 +219,27 @@ def check_if_game_over():
 def handle_turn(player):
     print(player + "'s turn.")
     valid = False
-    position = input("Choose a position from 1-9: ")
+    position = input("\nChoose a position from 1-9: ")
     x = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
     while not valid:
         try:
             if position not in x:
                 raise ValueError
-        except ValueError:
-            print("\n")
-            print("Incorrect Value Please Try Again")
-            print("\n")
-            position = input("Choose a position from 1-9: ")
-        else:
-            while True:
-                try:
-                    # Get correct index in our board list
-                    position = int(position) - 1
-                    if board[position] != "*":
-                        raise ValueError
-                except ValueError:
-                    print("\n")
-                    print("Space taken, Try Again")
-                    print("\n")
-                    position = input("Choose a position from 1-9: ")
+            else:
+                position = int(position) - 1
+                if board[position] == "*":
+                    valid = True
+                    board[position] = player
+                    display_board()
+                    return
                 else:
-                    if board[position] == "*":
-                        valid = True
-                        # Mark the board
-                        board[position] = player
-                        # Display game board
-                        display_board()
-                        return
+                    raise SpaceTakenError
+        except ValueError:
+            print("\nError: Incorrect Value Please Try Again\n")
+            position = input("\nChoose a position from 1-9: ")
+        except SpaceTakenError:
+            print("\nError: Space Taken, Try Again\n")
+            position = input("\nChoose a position from 1-9: ")
 
 
 # Display the game board to the screen
