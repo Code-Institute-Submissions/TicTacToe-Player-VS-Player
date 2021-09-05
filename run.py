@@ -21,22 +21,27 @@ current_player = "X"
 def invalid_input():
     print("\n")
     start = input("Would you like to play a game? Y/N: ").upper()
-    # If yes play game
-    if start.upper() == "Y":
-        play_game()
-    # if no exit
-    elif start.upper() == "N":
-        print("\n")
-        print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
-        print("Find me on GitHub, TechCentreUK")
-        print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
-        print("\n")
-        exit
-    # if invalid input print
-    else:
-        print("\n")
-        print("Invalid character, Please run again")
-        invalid_input()
+    while True:
+        try:
+            if start != "Y":
+                if start != "N":
+                    raise ValueError
+        except ValueError:
+            print("\n")
+            print("Invalid character, Please try again")
+            invalid_input()
+        else:
+            # If yes play game
+            if start.upper() == "Y":
+                play_game()
+            # if no exit
+            elif start.upper() == "N":
+                print("\n")
+                print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+                print("Find me on GitHub, TechCentreUK")
+                print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+                print("\n")
+                exit()
 
 
 # 06 Play again when game ends
@@ -70,7 +75,7 @@ def play_again():
         exit
     else:
         # Error if invalid character was input
-        print("Invalid character, Please run again")
+        print("Invalid character, Please try again")
         invalid_input()
 
 
@@ -256,22 +261,27 @@ def start():
     display_board()
     print("\n")
     start = input("Would you like to play a game? Y/N: ").upper()
-    # If yes play game
-    if start.upper() == "Y":
-        play_game()
-    # if no exit
-    elif start.upper() == "N":
-        print("\n")
-        print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
-        print("Find me on GitHub, TechCentreUK")
-        print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
-        print("\n")
-        exit
-    # if invalid input print
-    else:
-        print("\n")
-        print("Invalid character, Please run again")
-        invalid_input()
+    while True:
+        try:
+            if start != "Y":
+                if start != "N":
+                    raise ValueError
+        except ValueError:
+            print("\n")
+            print("Invalid character, Please try again")
+            invalid_input()
+        else:
+            # If yes play game
+            if start.upper() == "Y":
+                play_game()
+            # if no exit
+            elif start.upper() == "N":
+                print("\n")
+                print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+                print("Find me on GitHub, TechCentreUK")
+                print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+                print("\n")
+                break
 
 
 # ------- Execute -------
