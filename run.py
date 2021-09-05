@@ -48,35 +48,41 @@ def invalid_input():
 def play_again():
     print("\n")
     # Ask user for another game
-    start = input("Would you like to play another game? Y/N: ").upper()
-    # If yes resest the game
-    if start.upper() == "Y":
-        # Reset board
-        global board
-        board = ["*", "*", "*", "*", "*", "*", "*", "*", "*"]
-        # Reset ongoing_game
-        global ongoing_game
-        ongoing_game = True
-        # Reset current player back to X
-        global current_player
-        current_player = "X"
-        # Reset winner to none
-        global winner
-        winner = None
-        # Run Game
-        play_game()
-        # Exit if N was typed
-    elif start.upper() == "N":
-        print("\n")
-        print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
-        print("Find me on GitHub, TechCentreUK")
-        print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
-        print("\n")
-        exit
-    else:
-        # Error if invalid character was input
-        print("Invalid character, Please try again")
-        invalid_input()
+    play = input("Would you like to play another game? Y/N: ").upper()
+    while True:
+        try:
+            if play != "Y":
+                if play != "N":
+                    raise ValueError
+        except ValueError:
+            print("\n")
+            print("Invalid character, Please try again")
+            invalid_input()
+        else:
+            # If yes reset the game
+            if play.upper() == "Y":
+                # Reset board
+                global board
+                board = ["*", "*", "*", "*", "*", "*", "*", "*", "*"]
+                # Reset ongoing_game
+                global ongoing_game
+                ongoing_game = True
+                # Reset current player back to X
+                global current_player
+                current_player = "X"
+                # Reset winner to none
+                global winner
+                winner = None
+                # Run Game
+                play_game()
+                # Exit if N was typed
+            elif play.upper() == "N":
+                print("\n")
+                print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+                print("Find me on GitHub, TechCentreUK")
+                print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+                print("\n")
+                exit()
 
 
 # 05 Swap the current player from X to O, or O to X
