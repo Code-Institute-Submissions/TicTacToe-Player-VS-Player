@@ -17,9 +17,7 @@ current_player = "X"
 # ------- Functions -------
 
 
-# 07 If invalid input othr than Y/N prompts again
-def invalid_input():
-    print("\n")
+def y_n_prompt():
     start = input("Would you like to play a game? Y/N: ").upper()
     while True:
         try:
@@ -29,7 +27,7 @@ def invalid_input():
         except ValueError:
             print("\n")
             print("Invalid character, Please try again")
-            invalid_input()
+            y_n_prompt()
         else:
             # If yes play game
             if start.upper() == "Y":
@@ -44,7 +42,7 @@ def invalid_input():
                 exit()
 
 
-# 06 Play again when game ends
+# Play again when game ends
 def play_again():
     print("\n")
     # Ask user for another game
@@ -57,7 +55,7 @@ def play_again():
         except ValueError:
             print("\n")
             print("Invalid character, Please try again")
-            invalid_input()
+            y_n_prompt()
         else:
             # If yes reset the game
             if play.upper() == "Y":
@@ -85,7 +83,7 @@ def play_again():
                 exit()
 
 
-# 05 Swap the current player from X to O, or O to X
+# Swap the current player from X to O, or O to X
 def swap_player():
     # Global variable we need
     global current_player
@@ -97,7 +95,7 @@ def swap_player():
         current_player = "X"
 
 
-# 4.5 Check if there is a tie
+# Check if there is a tie
 def check_for_tie():
     # Set global variable
     global ongoing_game
@@ -113,7 +111,7 @@ def check_for_tie():
         return False
 
 
-# 4.4 Check the diagonals for a win
+# Check the diagonals for a win
 def check_diagonals():
     # Set global variable
     global ongoing_game
@@ -133,7 +131,7 @@ def check_diagonals():
         return None
 
 
-# 4.3 Check the columns for a win
+# Check the columns for a win
 def check_columns():
     # Set global variable
     global ongoing_game
@@ -156,7 +154,7 @@ def check_columns():
         return None
 
 
-# 4.2 Check the rows for a win
+# Check the rows for a win
 def check_rows():
     # Set global variable
     global ongoing_game
@@ -179,7 +177,7 @@ def check_rows():
         return None
 
 
-# 4.1 Check for winner
+# Check for winner
 def check_for_winner():
     # Set global variable
     global winner
@@ -197,7 +195,7 @@ def check_for_winner():
         winner = None
 
 
-# 04 Check for game end
+# Check for game end
 def check_if_game_over():
     # Check for winner
     check_for_winner()
@@ -205,7 +203,7 @@ def check_if_game_over():
     check_for_tie()
 
 
-# 03 Handle Turn
+# Handle Turn
 def handle_turn(player):
     print(player + "'s turn.")
     valid = False
@@ -242,7 +240,7 @@ def handle_turn(player):
                         return
 
 
-# 02 Display the game board to the screen
+# Display the game board to the screen
 def display_board():
     print("\n")
     print("-------------------------------------")
@@ -256,7 +254,7 @@ def display_board():
     print("\n")
 
 
-# 01 Play a game of tic tac toe
+# Play a game of tic tac toe
 def play_game():
     # Show the initial game board
     display_board()
@@ -276,32 +274,11 @@ def play_game():
             play_again()
 
 
-# 00 Prompt user to start game
+# Prompt user to start game
 def start():
     display_board()
     print("\n")
-    start = input("Would you like to play a game? Y/N: ").upper()
-    while True:
-        try:
-            if start != "Y":
-                if start != "N":
-                    raise ValueError
-        except ValueError:
-            print("\n")
-            print("Invalid character, Please try again")
-            invalid_input()
-        else:
-            # If yes play game
-            if start.upper() == "Y":
-                play_game()
-            # if no exit
-            elif start.upper() == "N":
-                print("\n")
-                print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
-                print("Find me on GitHub, TechCentreUK")
-                print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
-                print("\n")
-                break
+    y_n_prompt()
 
 
 # ------- Execute -------
