@@ -205,27 +205,41 @@ def check_if_game_over():
     check_for_tie()
 
 
-# 03 Handle a turn
+# 03 Handle Turn
 def handle_turn(player):
-    # Get position from player
     print(player + "'s turn.")
-    position = input("Choose a position from 1-9: ")
-    # Check input is valid
     valid = False
+    position = input("Choose a position from 1-9: ")
+    x = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
     while not valid:
-        while position not in ["1", "2", "3", "4", "5", "6", "7", "8", "9"]:
+        try:
+            if position not in x:
+                raise ValueError
+        except ValueError:
+            print("\n")
+            print("Incorrect Value Please Try Again")
+            print("\n")
             position = input("Choose a position from 1-9: ")
-        # Get correct index in our board list
-        position = int(position) - 1
-        # Check position is available
-        if board[position] == "*":
-            valid = True
         else:
-            print("Position taken, please try again")
-    # Mark the board
-    board[position] = player
-    # Display game board
-    display_board()
+            while True:
+                try:
+                    # Get correct index in our board list
+                    position = int(position) - 1
+                    if board[position] != "*":
+                        raise ValueError
+                except ValueError:
+                    print("\n")
+                    print("Space taken, Try Again")
+                    print("\n")
+                    position = input("Choose a position from 1-9: ")
+                else:
+                    if board[position] == "*":
+                        valid = True
+                        # Mark the board
+                        board[position] = player
+                        # Display game board
+                        display_board()
+                        return
 
 
 # 02 Display the game board to the screen
@@ -262,7 +276,7 @@ def play_game():
             play_again()
 
 
-# Prompt user to start game
+# 00 Prompt user to start game
 def start():
     display_board()
     print("\n")
