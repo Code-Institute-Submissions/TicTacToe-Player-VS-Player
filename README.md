@@ -19,7 +19,7 @@ A Multiplayer CLI or Command Line Interface Python Game of Tic Tac Toe.
 
 ### Design
 
-![Flow Chart](https://lucid.app/lucidchart/dccd2aae-7a2f-4b87-a287-ccb14616b715/view?page=0_0#)
+[Flow Chart](https://lucid.app/lucidchart/dccd2aae-7a2f-4b87-a287-ccb14616b715/view?page=0_0#)
 [Explanation of steps]()
 
 ### Goals
