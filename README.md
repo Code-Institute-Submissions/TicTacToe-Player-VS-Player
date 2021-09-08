@@ -19,12 +19,14 @@ A Multiplayer CLI or Command Line Interface Python Game of Tic Tac Toe.
 
 ### Design
 
-[Flow Chart](https://lucid.app/lucidchart/dccd2aae-7a2f-4b87-a287-ccb14616b715/view?page=0_0#)
-[Explanation of steps]()
+-[Flow Chart](https://lucid.app/lucidchart/dccd2aae-7a2f-4b87-a287-ccb14616b715/view?page=0_0#)  
+
+-[Explanation of steps]()
 
 ### Goals
 
 - To enable the user to play a mulitplayer game of tic tac toe in the command line.
+- The application can also be used to show how python is used to create a simple multiplayer game from the command line.
 
 ### Audience
 
@@ -45,7 +47,9 @@ A Multiplayer CLI or Command Line Interface Python Game of Tic Tac Toe.
 I had alot of bugs throughout this entire build, trying to figure out and work through all the various loops and end points has been a tedious task.
 
 ## Testing
-![Testing Sheet]()
+
+Below you can find a link to google sheets, this is my testing results upon completing my python game.
+[Testing Sheet](https://docs.google.com/spreadsheets/d/1aHKeNokEGKEaTC_hyUudQpub8aem5UGtUgG1ppLXxik/edit?usp=sharing)
 
 ## Deployment
 
@@ -91,9 +95,9 @@ Forking a repository allows you to experiment without the original project being
 
 ## Credits
 
-[Programiz](https://www.programiz.com/python-programming/user-defined-exception)
-[Docs](https://docs.python.org/3/tutorial/errors.html#exceptions)
-- For teaching me how to create my own exceptions.
+-[Programiz](https://www.programiz.com/python-programming/user-defined-exception)
+-[Docs](https://docs.python.org/3/tutorial/errors.html#exceptions)
+For teaching me how to create my own exceptions.
 
 [ezgif](https://ezgif.com/video-to-gif/ezgif-7-8f72051b1f54.mp4)
 - For creating my readme gif.
