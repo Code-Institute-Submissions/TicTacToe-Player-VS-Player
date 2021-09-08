@@ -48,7 +48,8 @@ I had alot of bugs throughout this entire build, trying to figure out and work t
 
 ## Testing
 
-Below you can find a link to google sheets, this is my testing results upon completing my python game.
+Below you can find a link to google sheets, this is my testing results upon completing my python game.  
+
 [Testing Sheet](https://docs.google.com/spreadsheets/d/1aHKeNokEGKEaTC_hyUudQpub8aem5UGtUgG1ppLXxik/edit?usp=sharing)
 
 ## Deployment
@@ -95,11 +96,12 @@ Forking a repository allows you to experiment without the original project being
 
 ## Credits
 
--[Programiz](https://www.programiz.com/python-programming/user-defined-exception)
+-[Programiz](https://www.programiz.com/python-programming/user-defined-exception)  
+
 -[Docs](https://docs.python.org/3/tutorial/errors.html#exceptions)
 For teaching me how to create my own exceptions.
 
-[ezgif](https://ezgif.com/video-to-gif/ezgif-7-8f72051b1f54.mp4)
+-[ezgif](https://ezgif.com/video-to-gif/ezgif-7-8f72051b1f54.mp4)
 - For creating my readme gif.
 
 ### Acknowledgment
