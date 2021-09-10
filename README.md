@@ -21,8 +21,6 @@ A Multiplayer CLI or Command Line Interface Python Game of Tic Tac Toe.
 
 -[Flow Chart](https://lucid.app/lucidchart/dccd2aae-7a2f-4b87-a287-ccb14616b715/view?page=0_0#)  
 
--[Explanation of steps]()
-
 ### Goals
 
 - To enable the user to play a mulitplayer game of tic tac toe in the command line.
